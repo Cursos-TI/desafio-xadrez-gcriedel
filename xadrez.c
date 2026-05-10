@@ -3,7 +3,7 @@
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
 // Desafio Xadrez em C
-// Objetivo: Xadrez - Tema 1 - Desafio Nivel Novato - Modulo 4
+// Objetivo: Xadrez - Tema 2 - Desafio Nivel Aventureiro - Modulo 4
 
 #include <stdio.h>
 int main() {
@@ -27,7 +27,7 @@ int main() {
         printf("Direita\n");
     }
 
-    // pulando linha para organizar melhor a saída
+    // linha em branco para organizar a saída
 
     printf("\n");
 
@@ -46,15 +46,15 @@ int main() {
 
     printf("=== MOVIMENTO DO BISPO ===\n");
 
-    // enquanto o contador for menor ou igual a 5
-    // o movimento continuará acontecendo
+    // enquanto o contador for menor ou igual ao número de casas
+    // o movimento continua acontecendo
 
     while (contadorBispo <= casasBispo) {
 
         printf("Cima, Direita\n");
 
         // incremento do contador
-        // sem isso o while ficaria infinito
+        // evita loop infinito
 
         contadorBispo++;
     }
@@ -76,7 +76,7 @@ int main() {
 
     printf("=== MOVIMENTO DA RAINHA ===\n");
 
-    // o do-while executa pelo menos uma vez
+    // o do-while executa primeiro
     // depois verifica a condição
 
     do {
@@ -86,6 +86,76 @@ int main() {
         contadorRainha++;
 
     } while (contadorRainha <= casasRainha);
+
+    // linha em branco para separar os movimentos
+
+    printf("\n");
+
+    // =====================================================
+    // CAVALO
+    // o cavalo se move em formato de "L"
+    // neste desafio ele fará:
+    // 2 casas para baixo
+    // 1 casa para a esquerda
+    //
+    // aqui serão usados loops aninhados
+    // um FOR e um WHILE
+    // =====================================================
+
+    int movimentosBaixo = 2;
+    int movimentosEsquerda = 1;
+
+    printf("=== MOVIMENTO DO CAVALO ===\n");
+
+    // =====================================================
+    // PRIMEIRA PARTE DO MOVIMENTO
+    // usando FOR para mover duas casas para baixo
+    // =====================================================
+
+    for (int i = 1; i <= movimentosBaixo; i++) {
+
+        printf("Baixo\n");
+    }
+
+    // =====================================================
+    // SEGUNDA PARTE DO MOVIMENTO
+    // usando WHILE para mover uma casa para esquerda
+    // =====================================================
+
+    int contadorEsquerda = 1;
+
+    while (contadorEsquerda <= movimentosEsquerda) {
+
+        printf("Esquerda\n");
+
+        contadorEsquerda++;
+    }
+
+    // =====================================================
+    // EXEMPLO DE LOOP ANINHADO
+    // aqui estou utilizando um loop dentro do outro
+    // apenas para demonstrar o conceito solicitado
+    // =====================================================
+
+    printf("\n=== LOOP ANINHADO DO CAVALO ===\n");
+
+    // loop externo com FOR
+
+    for (int i = 1; i <= 1; i++) {
+
+        int contadorInterno = 1;
+
+        // loop interno com WHILE
+
+        while (contadorInterno <= 2) {
+
+            printf("Baixo\n");
+
+            contadorInterno++;
+        }
+
+        printf("Esquerda\n");
+    }
 
     // =====================================================
     // FINAL DO PROGRAMA
